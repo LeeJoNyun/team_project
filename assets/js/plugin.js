@@ -44,3 +44,33 @@ function animateSlide(slide) {
         delay: 0.2
     });
 }
+
+
+gsap.fromTo(".second_area .info",
+    { y: 100, opacity: 0 }, // 아래에서 시작
+    {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+            trigger: ".second_area .info",
+            start: "top 700",
+            toggleActions: "play none none none" // 한 번만 실행
+        }
+    }
+);
+
+gsap.fromTo(".second_area .calendar",
+    { y: 100, opacity: 0 }, // 아래에서 시작
+    {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+            trigger: ".second_area .calendar",
+            start: "top 700",
+            toggleActions: "play none none none" // 한 번만 실행
+        },
+        delay: 0.6
+    }
+);

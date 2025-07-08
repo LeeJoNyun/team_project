@@ -258,6 +258,7 @@
   width: 92px;
   height: 80px;
   background: var(--Blue-Grey-grey-600, #3e4247);
+  border: none;
   border-radius: 0 80px 80px 0;
   position: absolute;
   right: -1px;
@@ -298,4 +299,118 @@
 }
 .banner .inner .menu_tap ul li a:hover svg path {
   fill: white;
+}
+
+#section1 .inner {
+  padding-top: 110px;
+  position: relative;
+  height: 483px;
+  margin-bottom: 100px;
+}
+#section1 .inner .first_area {
+  padding-left: 120px;
+  position: absolute;
+  top: 30%;
+  width: 1360px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#section1 .inner .first_area .title {
+  width: 388px;
+}
+#section1 .inner .first_area .title strong {
+  color: var(--Blue-blue-600, #0b6cc8);
+  font-size: 38px;
+  font-weight: 600;
+}
+#section1 .inner .second_area {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 1360px;
+  height: 298px;
+  margin-left: 120px;
+}
+#section1 .inner .second_area .info {
+  width: 408px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 4px 8px 4px rgba(0, 45, 80, 0.05);
+  border-radius: 20px;
+}
+#section1 .inner .second_area .info .box {
+  text-align: center;
+}
+#section1 .inner .second_area .info .box li:nth-child(1) {
+  color: #000;
+  text-align: center;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 18px;
+}
+#section1 .inner .second_area .info .box li:nth-child(2) {
+  color: #000;
+  text-align: center;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 18px;
+}
+#section1 .inner .second_area .info .box li:nth-child(3) button {
+  color: var(--W, #fff);
+  text-align: center;
+  border-radius: 60px;
+  background: var(--Blue-Grey-grey-600, #3e4247);
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  width: 194px;
+  height: 51px;
+  cursor: pointer;
+}
+#section1 .inner .second_area .calendar {
+  display: flex;
+  justify-content: center;
+  box-shadow: 4px 4px 8px 4px rgba(0, 45, 80, 0.05);
+  border-radius: 20px;
+}
+#section1 .inner .second_area .calendar li {
+  display: flex;
+  flex-direction: column;
+}
+#section1 .inner .second_area .calendar li .yoil {
+  width: 133px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid var(--Blue-blue-50, #e5f3ff);
+  background-color: #6eb2f0;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+}
+#section1 .inner .second_area .calendar li .memo {
+  width: 133px;
+  height: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid var(--Blue-blue-50, #e5f3ff);
+}
+#section1 .inner .second_area .calendar li:nth-child(1) .yoil {
+  border-top-left-radius: 25px;
+}
+#section1 .inner .second_area .calendar li:nth-child(1) .memo {
+  border-left: none;
+}
+#section1 .inner .second_area .calendar li:nth-child(7) .yoil {
+  border-top-right-radius: 25px;
 }

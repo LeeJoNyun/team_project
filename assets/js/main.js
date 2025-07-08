@@ -57,12 +57,19 @@ const menuTapHoverEventHandler = () => {
         })
     });
 }
+
+const a = () => {
+    window.addEventListener('scroll', () => {
+        console.log('현재 스크롤 위치:', window.scrollY);
+    });
+}
 const init = () => {
     depth2Display();
     depth2NoneDisplay();
     bannerControl();
     fnClickBtn();
     menuTapHoverEventHandler();
+    a();
 }
 
 init();
