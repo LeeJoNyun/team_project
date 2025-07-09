@@ -301,15 +301,26 @@
           a {
             width: 75px;
             height: 75px;
-            padding: 23px 23px 22px 22px;
+            padding: 17px;
             border-radius: 20px;
             background: var(--Blue-CoolGray-blue-50, #f6f7f8);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            svg:nth-child(1) {
+              display: block;
+            }
+            svg:nth-child(2) {
+              display: none;
+            }
             &:hover {
-              background: var(--Blue-blue-300, #6eb2f0);
-              svg {
-                path {
-                  fill: white;
-                }
+              background-color: #6eb2f0;
+              svg:nth-child(1) {
+                display: none;
+              }
+              svg:nth-child(2) {
+                display: block;
               }
             }
           }
@@ -444,4 +455,70 @@
       }
     }
   }
+}
+
+#section2 {
+  .inner {
+    width: 1358px;
+    margin: auto;
+    position: relative;
+    top: 50px;
+    .title {
+      color: var(--Blue-blue-600, #0b6cc8);
+      /* 38_semiBold */
+      font-size: 38px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .list {
+      border-radius: 20px;
+      background: var(--W, #fff);
+      /* 1 */
+      box-shadow: 4px 4px 8px 4px rgba(0, 45, 80, 0.05);
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 114px;
+      border-radius: 25px;
+      li {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        justify-content: center;
+        // width: 117px;
+        height: 50px;
+        padding: 0 50px;
+        border-right: 1px solid var(--Blue-CoolGray-blue-200, #d4d8df);
+        strong {
+          text-align: center;
+          color: #000;
+          font-size: 18px;
+          font-weight: 500;
+          overflow: visible;
+          white-space: nowrap;
+        }
+        span {
+          text-align: center;
+          color: var(--Blue-blue-600, #0b6cc8);
+          text-align: center;
+          font-size: 20px;
+          font-weight: 800;
+        }
+        &:last-child {
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+#section3 {
+  width: 100%;
+  height: 1024px;
+  background-image: url("../images/main_3/BG_3.png");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
