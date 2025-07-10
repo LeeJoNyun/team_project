@@ -487,5 +487,52 @@
   height: 1024px;
   background-image: url("../images/main_3/BG_3.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  object-fit: cover;
+}
+#section3 .inner {
+  height: 904px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#section3 .inner .con-box {
+  width: 1357px;
+  height: 614px;
+  margin: auto;
+  border: 1px solid #000;
+}
+#section3 .inner .con-box .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+}
+#section3 .inner .con-box .title strong {
+  font-size: 48px;
+  font-weight: 700;
+  color: #000;
+}
+#section3 .inner .con-box .bottom {
+  display: flex;
+  justify-content: space-between;
+}
+#section3 .inner .con-box .bottom .left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+#section3 .inner .con-box .bottom .left li {
+  width: 560px;
+  height: 114px;
+  background: url("../images/main_3/Book illustration_off.png");
+}
+#section3 .inner .con-box .bottom .left li a {
+  width: 560px;
+  height: 114px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 127px;
+  font-size: 22px;
 }

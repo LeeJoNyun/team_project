@@ -520,5 +520,55 @@
   height: 1024px;
   background-image: url("../images/main_3/BG_3.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  object-fit: cover;
+
+  .inner {
+    height: 904px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .con-box {
+      width: 1357px;
+      height: 614px;
+      margin: auto;
+      border: 1px solid #000;
+      .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 13px;
+
+        strong {
+          font-size: 48px;
+          font-weight: 700;
+          color: #000;
+        }
+      }
+      .bottom {
+        display: flex;
+        justify-content: space-between;
+        .left {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          li {
+            width: 560px;
+            height: 114px;
+            background: url("../images/main_3/Book\ illustration_off.png");
+
+            a {
+              width: 560px;
+              height: 114px;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              padding-left: 127px;
+              font-size: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
