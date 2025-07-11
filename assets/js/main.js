@@ -65,10 +65,10 @@ const section3ListClickEventHandler = () => {
     const bookmarks = getAll('#section3 .inner .con-box .bottom .right .bookmarks .bookmark')
     const img = get('#section3 .inner .con-box .bottom .right img')
     const imgArr = [
-        "../images/main_3/U-library1.png",
-        "../images/main_3/U-library2.png",
-        "../images/main_3/U-library3.png",
-        "../images/main_3/U-library4.png",
+        "../assets/images/main_3/U-library1.png",
+        "../assets/images/main_3/U-library2.png",
+        "../assets/images/main_3/U-library3.png",
+        "../assets/images/main_3/U-library4.png",
     ]
     //left list 클릭시
     lis.forEach((item, idx) => {
