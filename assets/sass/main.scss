@@ -528,11 +528,43 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     .con-box {
       width: 1357px;
       height: 614px;
       margin: auto;
-      border: 1px solid #000;
+      position: relative;
+      .line {
+        width: 3px;
+        height: 464px;
+        background: rgba(255, 255, 255, 0.5);
+        position: absolute;
+        left: 46%;
+        bottom: 4px;
+        transform: translateX(-50%);
+      }
+      .circle1 {
+        position: absolute;
+        display: block;
+        top: 143px;
+        left: 46%;
+        transform: translateX(-50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+      }
+      .circle2 {
+        position: absolute;
+        display: block;
+        bottom: 0;
+        left: 46%;
+        transform: translateX(-50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+      }
       .title {
         display: flex;
         justify-content: center;
@@ -552,19 +584,189 @@
           display: flex;
           flex-direction: column;
           gap: 4px;
+          padding-top: 69px;
           li {
             width: 560px;
             height: 114px;
             background: url("../images/main_3/Book\ illustration_off.png");
-
             a {
-              width: 560px;
+              width: 487px;
               height: 114px;
               display: flex;
               justify-content: flex-start;
               align-items: center;
-              padding-left: 127px;
+              padding-left: 72px;
               font-size: 22px;
+              gap: 18px;
+              .num {
+                width: 39px;
+                height: 39px;
+                border-radius: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 14px;
+                font-weight: 800;
+                color: #fff;
+                background: var(--Blue-Grey-grey-300, #828488);
+              }
+            }
+
+            &.on {
+              background: url("../images/main_3/Book-illustration_on.png");
+              a {
+                font-weight: 800;
+                .num {
+                  background: var(--Blue-blue-600, #0b6cc8);
+                }
+              }
+            }
+          }
+        }
+        .right {
+          width: 687px;
+          height: 494px;
+          padding-top: 69px;
+          position: relative;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+          .bookmarks {
+            display: flex;
+            justify-items: center;
+            flex-direction: column;
+            position: absolute;
+            top: 80px;
+            left: 100%;
+            gap: 2px;
+            .bookmark {
+              width: 25px;
+              height: 38px;
+              background: var(--Blue-Grey-grey-300, #828488);
+              border-top-right-radius: 5px;
+              border-bottom-right-radius: 5px;
+              &.on {
+                background: var(--Blue-blue-600, #0b6cc8);
+                width: 33px;
+              }
+              a {
+                display: block;
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#section4 {
+  .inner {
+    height: 644px;
+    margin: 160px;
+    .top {
+      width: 634px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 120px;
+      gap: 26px;
+      .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        h2 {
+          color: #000;
+          font-size: 48px;
+          font-weight: 700;
+        }
+      }
+      .tap-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 13px;
+        li {
+          display: flex;
+          overflow: hidden; // 라운드 처리에 유용
+          // padding: 12px 30px;
+          // border-radius: 60px;
+          justify-content: center;
+          align-items: center;
+
+          a {
+            display: block;
+            padding: 12px 30px;
+            border-radius: 60px;
+            border: 1px solid var(--Blue-Grey-grey-500, #44484e);
+            font-size: 14px;
+            line-height: 14px;
+            text-align: center;
+            color: #44484e;
+          }
+
+          &.on {
+            a {
+              border: 1px solid var(--Blue-blue-600, #0b6cc8);
+              padding: 12px 38px;
+              color: #0b6cc8;
+              font-weight: 600;
+              position: relative;
+              &::after {
+                content: "";
+                width: 5px;
+                height: 5px;
+                border-radius: 100%;
+                background-color: #0b6cc8;
+                position: absolute;
+                left: 20%;
+                top: 50%;
+                transform: translateY(-50%);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .bottom {
+      margin-top: 42px;
+      ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 41px;
+
+        li {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 20px;
+          position: relative; // 중요
+          overflow: hidden; // 확대 이미지 잘림 방지
+          transform: scale(1);
+          span {
+            border-radius: 60px;
+            border: 1px solid #000;
+            background: var(--Blue-CoolGray-blue-50, #f6f7f8);
+            font-size: 18px;
+            font-weight: 600;
+            padding: 2px 24px;
+          }
+          p {
+            font-size: 16px;
+          }
+          &:hover {
+            transform: scale(1.07);
+            span {
+              color: var(--Blue-blue-500, #3879e1);
+            }
+            p {
+              font-weight: 600;
             }
           }
         }

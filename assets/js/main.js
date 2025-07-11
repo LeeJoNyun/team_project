@@ -58,10 +58,82 @@ const menuTapHoverEventHandler = () => {
     });
 }
 
-const a = () => {
-    window.addEventListener('scroll', () => {
-        console.log('현재 스크롤 위치:', window.scrollY);
-    });
+
+
+const section3ListClickEventHandler = () => {
+    const lis = getAll('#section3 .inner .con-box .bottom .left li')
+    const bookmarks = getAll('#section3 .inner .con-box .bottom .right .bookmarks .bookmark')
+    const img = get('#section3 .inner .con-box .bottom .right img')
+    const imgArr = [
+        "assets/images/main_3/U-library1.png",
+        "assets/images/main_3/U-library2.png",
+        "assets/images/main_3/U-library3.png",
+        "assets/images/main_3/U-library4.png",
+    ]
+    //left list 클릭시
+    lis.forEach((item, idx) => {
+        const target = item.querySelector('a');
+        target.addEventListener('click', (e) => {
+            e.preventDefault();
+            lis.forEach((item1) => {
+                item1.classList.remove('on');
+            })
+            bookmarks.forEach((item1) => {
+                item1.classList.remove('on');
+            })
+            item.classList.add('on');
+            bookmarks[idx].classList.add('on');
+            img.setAttribute('src', imgArr[idx]);
+        })
+    })
+
+    //right list 클릭시
+    bookmarks.forEach((item, idx) => {
+        const target = item.querySelector('a');
+        target.addEventListener('click', (e) => {
+            e.preventDefault();
+            lis.forEach((item1) => {
+                item1.classList.remove('on');
+            })
+            bookmarks.forEach((item1) => {
+                item1.classList.remove('on');
+            })
+            item.classList.add('on');
+            lis[idx].classList.add('on');
+            img.setAttribute('src', imgArr[idx]);
+        })
+    })
+}
+
+const section4TapMenuClickEventHandler = () => {
+    const lis = getAll('#section4 .inner .tap-menu li')
+    lis.forEach((item) => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            lis.forEach(item1 => {
+                item1.classList.remove('on');
+            })
+            item.classList.add('on');
+        })
+    })
+}
+
+const section4LiMouseEventHandler = () => {
+    const lis = getAll('#section4 .inner .bottom ul li')
+    let imgOnTemplate = `assets/images/main_4/Object_1_on{idx}.png`;
+    let imgOffTemplate = `assets/images/main_4/Object_1_off{idx}.png`;
+    lis.forEach((item, idx) => {
+        item.addEventListener('mouseenter', () => {
+            const target = item.querySelector('img');
+            const imgOn = imgOnTemplate.replace('{idx}', idx + 1);
+            target.setAttribute('src', imgOn);
+        });
+        item.addEventListener('mouseleave', () => {
+            const target = item.querySelector('img');
+            const imgOff = imgOffTemplate.replace('{idx}', idx + 1);
+            target.setAttribute('src', imgOff);
+        });
+    })
 }
 const init = () => {
     depth2Display();
@@ -69,7 +141,9 @@ const init = () => {
     bannerControl();
     fnClickBtn();
     menuTapHoverEventHandler();
-    a();
+    section3ListClickEventHandler();
+    section4TapMenuClickEventHandler();
+    section4LiMouseEventHandler();
 }
 
 init();
