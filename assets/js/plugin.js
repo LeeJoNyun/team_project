@@ -16,9 +16,24 @@ var swiper = new Swiper(".mySwiper", {
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
+
     },
 });
 
+var posterSwiper = new Swiper(".poster-swiper", {
+    slidesPerView: "auto", // 중요: 개별 슬라이드 너비 기준
+    centeredSlides: true,
+    loop: true,
+    spaceBetween: 66, // 슬라이드 간 간격
+    grabCursor: true,
+    pagination: {
+        clickable: true,
+    },
+    autoplay: {
+        delay: 3000, // ✅ 3초마다 슬라이드 전환
+        disableOnInteraction: false, // 사용자가 터치하거나 클릭해도 계속 자동 재생
+    },
+});
 
 // ✅ 애니메이션 실행 함수
 function animateSlide(slide) {
@@ -45,33 +60,35 @@ function animateSlide(slide) {
     });
 }
 
-
-gsap.fromTo(".second_area .info",
-    { y: 100, opacity: 0 }, // 아래에서 시작
-    {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        scrollTrigger: {
-            trigger: ".second_area .info",
-            start: "top 700",
-            toggleActions: "play none none none" // 한 번만 실행
-        }
+gsap.registerPlugin(ScrollTrigger);
+gsap.fromTo('.second_area .info', {
+    y: 100,       // 아래에서 시작
+    opacity: 0    // 투명하게 시작
+}, {
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    scrollTrigger: {
+        trigger: '.second_area .info',
+        start: 'top 80%',
+        end: 'top 30%',
+        toggleActions: 'play none none reverse',
     }
-);
-
-gsap.fromTo(".second_area .calendar",
-    { y: 100, opacity: 0 }, // 아래에서 시작
-    {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        scrollTrigger: {
-            trigger: ".second_area .calendar",
-            start: "top 700",
-            toggleActions: "play none none none" // 한 번만 실행
-        },
-        delay: 0.6
+});
+gsap.fromTo('.second_area .calendar', {
+    y: 100,       // 아래에서 시작
+    opacity: 0    // 투명하게 시작
+}, {
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    delay: 0.5,
+    scrollTrigger: {
+        trigger: '.second_area .calendar',
+        start: 'top 80%',
+        end: 'top 30%',
+        toggleActions: 'play none none reverse',
     }
-);
-////------------------여기서부터
+});
+
+

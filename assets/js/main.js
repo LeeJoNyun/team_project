@@ -135,6 +135,27 @@ const section4LiMouseEventHandler = () => {
         });
     })
 }
+
+const section5PostMouseEventHandler = () => {
+    const slides = getAll('#section5 .bottom .poster-swiper .swiper-slide');
+    const bg = get('#section5 .bottom .bg');
+    slides.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            const img = item.querySelector('img');
+            const imgSrc = img.getAttribute('src');
+            bg.style.backgroundImage = `url(${imgSrc})`;
+            bg.style.opacity = 1;
+            posterSwiper.autoplay.stop(); // ✅ autoplay 정지
+            item.classList.add('on');
+        });
+
+        item.addEventListener('mouseleave', () => {
+            posterSwiper.autoplay.start(); // ✅ autoplay 다시 시작
+            item.classList.remove('on');
+        });
+    })
+
+}
 const init = () => {
     depth2Display();
     depth2NoneDisplay();
@@ -144,6 +165,7 @@ const init = () => {
     section3ListClickEventHandler();
     section4TapMenuClickEventHandler();
     section4LiMouseEventHandler();
+    section5PostMouseEventHandler();
 }
 
 init();

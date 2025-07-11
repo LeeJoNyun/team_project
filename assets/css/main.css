@@ -628,7 +628,8 @@
 
 #section4 .inner {
   height: 644px;
-  margin: 160px;
+  margin: auto;
+  padding: 160px;
 }
 #section4 .inner .top {
   width: 634px;
@@ -726,4 +727,225 @@
 }
 #section4 .inner .bottom ul li:hover p {
   font-weight: 600;
+}
+
+#section5 {
+  background-image: url(/assets/images/main_5/BG_5.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 1066px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#section5 .inner {
+  height: 743px;
+}
+#section5 .inner .top {
+  margin-bottom: 82px;
+}
+#section5 .inner .top .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+#section5 .inner .top .title h2 {
+  color: var(--W, #fff);
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+}
+#section5 .inner .top .date {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 62px;
+}
+#section5 .inner .top .date .calendar {
+  width: 144px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#section5 .inner .top .date .calendar .swiper {
+  width: 100%;
+  height: 100%;
+}
+#section5 .inner .top .date .calendar .swiper-slide {
+  color: var(--Blue-blue-200, #a5d3ff);
+  text-align: center;
+  font-size: 38px;
+  font-weight: 600;
+  letter-spacing: 3.8px;
+  line-height: 45px;
+}
+#section5 .inner .top .date .calendar .calendar-button-next {
+  cursor: pointer;
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+}
+#section5 .inner .top .date .calendar .calendar-button-next img {
+  width: 35px;
+  height: 35px;
+}
+#section5 .inner .top .date .calendar .calendar-button-prev {
+  cursor: pointer;
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  z-index: 30;
+  transform: translateY(-50%);
+}
+#section5 .inner .top .date .calendar .calendar-button-prev img {
+  width: 35px;
+  height: 35px;
+}
+#section5 .inner .top .date .days {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: var(--Blue-blue-200, #a5d3ff);
+}
+#section5 .inner .top .date .days li {
+  width: 37px;
+  height: 37px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#section5 .inner .top .date .days li.on {
+  border: 1.5px solid #fff;
+  font-weight: 800;
+}
+#section5 .inner .bottom .poster-swiper {
+  width: 100%;
+  height: 100%;
+  padding: 40px 0;
+}
+#section5 .inner .bottom .swiper-wrapper {
+  align-items: flex-start;
+}
+#section5 .inner .bottom .swiper-slide {
+  width: 308.359px;
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+#section5 .inner .bottom .swiper-slide img {
+  width: 100%;
+  height: 436px;
+  object-fit: cover;
+  margin-bottom: 22px;
+  border-radius: 22px;
+  position: relative;
+}
+#section5 .inner .bottom .swiper-slide strong {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+}
+#section5 .inner .bottom .swiper-slide span {
+  color: #d4d8df;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
+#section5 .inner .bottom .swiper-slide .bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  width: 100%;
+  height: 436px;
+  background-color: #000;
+  opacity: 0.8;
+  z-index: 3;
+  border-radius: 22px;
+  overflow: hidden;
+}
+#section5 .inner .bottom .swiper-slide .bg svg {
+  position: relative;
+  right: -85px;
+}
+#section5 .inner .bottom .swiper-slide .bg article {
+  width: 237px;
+  height: auto;
+  margin: auto;
+}
+#section5 .inner .bottom .swiper-slide .bg article .area {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 5px 20px;
+  border: 1px solid #fff;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+#section5 .inner .bottom .swiper-slide .bg article .title {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 17px;
+}
+#section5 .inner .bottom .swiper-slide .bg article .date {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#section5 .inner .bottom .swiper-slide .bg article .date span {
+  display: block;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+#section5 .inner .bottom .swiper-slide .bg .info {
+  position: relative;
+  bottom: -118px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+#section5 .inner .bottom .swiper-slide .bg .info span {
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  width: 182px;
+  height: 66px;
+  line-height: 66px;
+}
+#section5 .inner .bottom .swiper-slide .bg .info .left {
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+#section5 .inner .bottom .swiper-slide .bg .info .right {
+  border-top: 1px solid #fff;
+}
+#section5 .inner .bottom .swiper-slide.on {
+  transform: scale(1.1);
+}
+#section5 .inner .bottom .swiper-slide.on .slide-title,
+#section5 .inner .bottom .swiper-slide.on .slide-date {
+  display: none;
+}
+#section5 .inner .bottom .swiper-slide.on .bg {
+  display: block;
 }
