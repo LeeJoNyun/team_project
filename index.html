@@ -146,66 +146,8 @@
         <div class="inner">
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <article>
-                  <h2 class="title1">내 삶에가까운</h2>
-                  <h3 class="title2">관악구민도서관</h3>
-                  <input
-                    type="text"
-                    placeholder="원하시는 검색어를 입력하세요."
-                  />
-                  <button>
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                  </button>
-                  <div class="custom_icon">
-                    <div class="box">
-                      <div class="big"></div>
-                      <div class="small"></div>
-                    </div>
-                  </div>
-                </article>
-                <img src="./assets/images/MainVisual_1.png" alt="" />
-              </div>
-              <div class="swiper-slide">
-                <article>
-                  <h2 class="title1">내 삶에가까운</h2>
-                  <h3 class="title2">관악구민도서관</h3>
-                  <input
-                    type="text"
-                    placeholder="원하시는 검색어를 입력하세요."
-                  />
-                  <button>
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                  </button>
-                  <div class="custom_icon">
-                    <div class="box">
-                      <div class="big"></div>
-                      <div class="small"></div>
-                    </div>
-                  </div>
-                </article>
-                <img src="./assets/images/MainVisual_1.png" alt="" />
-              </div>
-              <div class="swiper-slide">
-                <article>
-                  <h2 class="title1">내 삶에가까운</h2>
-                  <h3 class="title2">관악구민도서관</h3>
-                  <input
-                    type="text"
-                    placeholder="원하시는 검색어를 입력하세요."
-                  />
-                  <button>
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                  </button>
-                  <div class="custom_icon">
-                    <div class="box">
-                      <div class="big"></div>
-                      <div class="small"></div>
-                    </div>
-                  </div>
-                </article>
-                <img src="./assets/images/MainVisual_1.png" alt="" />
-              </div>
+              <!-- S : pageOnLoad.js 함수로 추가 -->
+              <!-- E : pageOnLoad.js 함수로 추가 -->
             </div>
             <div class="swiper-pagination"></div>
           </div>
@@ -1088,31 +1030,36 @@
             </ul>
           </div>
           <div class="bottom">
-            <ul>
-              <li>
+            <ul class="book-theme-list">
+              <li class="books">
                 <img src="./assets/images/main_4/Object_1_off1.png" alt="" />
-                <span>장편소설</span>
-                <p>암행</p>
+                <span class="genre">추리/미스터리</span>
+                <strong class="title">암행</strong>
+                <p class="writer">정명섭 지음</p>
               </li>
-              <li>
+              <li class="books">
                 <img src="./assets/images/main_4/Object_1_off2.png" alt="" />
-                <span>장편소설</span>
-                <p>작별하지 않는다</p>
+                <span class="genre">장편소설</span>
+                <strong class="title">적법하지 않다</strong>
+                <p class="writer">한강 지음</p>
               </li>
-              <li>
+              <li class="books">
                 <img src="./assets/images/main_4/Object_1_off3.png" alt="" />
-                <span>장편소설</span>
-                <p>주 4일제 시대가 온다</p>
+                <span class="genre">사회/정치</span>
+                <strong class="title">주4일제 시대가 온다</strong>
+                <p class="writer">김홍진 지음</p>
               </li>
-              <li>
+              <li class="books">
                 <img src="./assets/images/main_4/Object_1_off4.png" alt="" />
-                <span>장편소설</span>
-                <p>동경일일 1</p>
+                <span class="genre">만화</span>
+                <strong class="title">동경일일</strong>
+                <p class="writer">마츠모토 타이요 지음</p>
               </li>
-              <li>
+              <li class="books">
                 <img src="./assets/images/main_4/Object_1_off5.png" alt="" />
-                <span>장편소설</span>
-                <p>달의 바다</p>
+                <span class="genre">장편소설</span>
+                <strong class="title">달의바다</strong>
+                <p class="writer">정한아 지음</p>
               </li>
             </ul>
           </div>
@@ -1154,174 +1101,19 @@
 
           <div class="bottom">
             <div class="swiper poster-swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="./assets/images/main_5/Frame 197.png" alt="" />
-                  <strong class="slide-title">6월 낙성원화 <소풍날></strong>
-                  <span class="slide-date">일정2025.06.01 ~ 2025.06.30</span>
-                  <div class="bg">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="58"
-                      height="76"
-                      viewBox="0 0 58 76"
-                      fill="none"
-                    >
-                      <g filter="url(#filter0_d_2099_68)">
-                        <path
-                          d="M4 0.938358C4 -4.29007 4 -6.90428 4.90833 -8.90229C5.70727 -10.659 6.98205 -12.0872 8.55 -12.9823C10.3333 -14 12.6667 -14 17.3333 -14H40.6667C45.3333 -14 47.6667 -14 49.45 -12.9823C51.0179 -12.0872 52.2927 -10.659 53.0917 -8.90229C54 -6.90428 54 -4.29007 54 0.938358V63.0492C54 65.318 54 66.4524 53.5792 67.0733C53.3973 67.3433 53.1653 67.5658 52.8991 67.7254C52.6329 67.885 52.3389 67.9779 52.0375 67.9976C51.3417 68.0443 50.5 67.4141 48.8167 66.1583L29 51.3553L9.18333 66.1536C7.5 67.4141 6.65833 68.0443 5.95833 67.9976C5.65765 67.9772 5.36449 67.884 5.09905 67.7245C4.83362 67.5649 4.60223 67.3427 4.42083 67.0733C4 66.4524 4 65.318 4 63.0492V0.938358Z"
-                          fill="white"
-                        />
-                      </g>
-                      <defs>
-                        <filter
-                          id="filter0_d_2099_68"
-                          x="0"
-                          y="-14"
-                          width="58"
-                          height="90"
-                          filterUnits="userSpaceOnUse"
-                          color-interpolation-filters="sRGB"
-                        >
-                          <feFlood
-                            flood-opacity="0"
-                            result="BackgroundImageFix"
-                          />
-                          <feColorMatrix
-                            in="SourceAlpha"
-                            type="matrix"
-                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                            result="hardAlpha"
-                          />
-                          <feOffset dy="4" />
-                          <feGaussianBlur stdDeviation="2" />
-                          <feComposite in2="hardAlpha" operator="out" />
-                          <feColorMatrix
-                            type="matrix"
-                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-                          />
-                          <feBlend
-                            mode="normal"
-                            in2="BackgroundImageFix"
-                            result="effect1_dropShadow_2099_68"
-                          />
-                          <feBlend
-                            mode="normal"
-                            in="SourceGraphic"
-                            in2="effect1_dropShadow_2099_68"
-                            result="shape"
-                          />
-                        </filter>
-                      </defs>
-                    </svg>
-                    <article>
-                      <strong class="area">낙성대공원</strong>
-                      <span class="title">6월 낙성원화 <소풍날></span>
-                      <div class="date">
-                        <span>일정2025.06.01 ~ 2025.06.30</span>
-                        <span>일정2025.06.01 ~ 2025.06.30</span>
-                      </div>
-                    </article>
-                    <div class="info">
-                      <span class="left">접수중</span>
-                      <span class="right">누구나</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <img src="./assets/images/main_5/Frame 197.png" alt="" />
-                  <strong class="slide-title">6월 낙성원화 <소풍날></strong>
-                  <span class="slide-date">일정2025.06.01 ~ 2025.06.30</span>
-                  <div class="bg"></div>
-                </div>
-                <div class="swiper-slide">
-                  <img src="./assets/images/main_5/Frame 197.png" alt="" />
-                  <strong>6월 낙성원화 <소풍날></strong>
-                  <span>일정2025.06.01 ~ 2025.06.30</span>
-                  <div class="bg"></div>
-                </div>
-                <div class="swiper-slide">
-                  <img src="./assets/images/main_5/Frame 197.png" alt="" />
-                  <strong>6월 낙성원화 <소풍날></strong>
-                  <span>일정2025.06.01 ~ 2025.06.30</span>
-                  <div class="bg"></div>
-                </div>
-                <div class="swiper-slide">
-                  <img src="./assets/images/main_5/Frame 197.png" alt="" />
-                  <strong>6월 낙성원화 <소풍날></strong>
-                  <span>일정2025.06.01 ~ 2025.06.30</span>
-                  <div class="bg"></div>
-                </div>
-                <div class="swiper-slide">
-                  <img src="./assets/images/main_5/Frame 197.png" alt="" />
-                  <strong>6월 낙성원화 <소풍날></strong>
-                  <span>일정2025.06.01 ~ 2025.06.30</span>
-                  <div class="bg"></div>
-                </div>
-                <div class="swiper-slide">
-                  <img src="./assets/images/main_5/Frame 197.png" alt="" />
-                  <strong>6월 낙성원화 <소풍날></strong>
-                  <span>일정2025.06.01 ~ 2025.06.30</span>
-                  <div class="bg"></div>
-                </div>
-                <div class="swiper-slide">
-                  <img src="./assets/images/main_5/Frame 197.png" alt="" />
-                  <strong>6월 낙성원화 <소풍날></strong>
-                  <span>일정2025.06.01 ~ 2025.06.30</span>
-                  <div class="bg"></div>
-                </div>
-                <div class="swiper-slide">
-                  <img src="./assets/images/main_5/Frame 197.png" alt="" />
-                  <strong>6월 낙성원화 <소풍날></strong>
-                  <span>일정2025.06.01 ~ 2025.06.30</span>
-                  <div class="bg"></div>
-                </div>
-                <div class="swiper-slide">
-                  <img src="./assets/images/main_5/Frame 197.png" alt="" />
-                  <strong>6월 낙성원화 <소풍날></strong>
-                  <span>일정2025.06.01 ~ 2025.06.30</span>
-                  <div class="bg"></div>
-                </div>
-                <div class="swiper-slide">
-                  <img src="./assets/images/main_5/Frame 197.png" alt="" />
-                  <strong>6월 낙성원화 <소풍날></strong>
-                  <span>일정2025.06.01 ~ 2025.06.30</span>
-                  <div class="bg"></div>
-                </div>
-                <div class="swiper-slide">
-                  <img src="./assets/images/main_5/Frame 197.png" alt="" />
-                  <strong>6월 낙성원화 <소풍날></strong>
-                  <span>일정2025.06.01 ~ 2025.06.30</span>
-                  <div class="bg"></div>
-                </div>
-                <div class="swiper-slide">
-                  <img src="./assets/images/main_5/Frame 197.png" alt="" />
-                  <strong>6월 낙성원화 <소풍날></strong>
-                  <span>일정2025.06.01 ~ 2025.06.30</span>
-                  <div class="bg"></div>
-                </div>
-                <div class="swiper-slide">
-                  <img src="./assets/images/main_5/Frame 197.png" alt="" />
-                  <strong>6월 낙성원화 <소풍날></strong>
-                  <span>일정2025.06.01 ~ 2025.06.30</span>
-                  <div class="bg"></div>
-                </div>
-                <div class="swiper-slide">
-                  <img src="./assets/images/main_5/Frame 197.png" alt="" />
-                  <strong>6월 낙성원화 <소풍날></strong>
-                  <span>일정2025.06.01 ~ 2025.06.30</span>
-                  <div class="bg"></div>
-                </div>
-              </div>
+              <div class="swiper-wrapper"></div>
             </div>
           </div>
         </div>
+      </section>
+      <section id="section6">
+        <div class="inner"></div>
       </section>
     </div>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./assets/js/pageOnLoad.js"></script>
     <script src="./assets/js/plugin.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
   </body>
 </html>

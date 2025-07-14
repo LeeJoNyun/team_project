@@ -1,85 +1,124 @@
-// const setDateInSwiper = () => {
-//     let html = ``;
-//     for (let i = 0; i < 12; i++) {
-//         if (i < 10) {
-//             html += `<div class="swiper-slide">0${i + 1}월</div>`
-//         }
-//         else {
-//             html += `<div class="swiper-slide">${i + 1}월</div>`
-//         }
-//     }
-//     const target = document.querySelector('.calendar-wrapper');
-//     target.innerHTML = html;
-// }
-
-// // const setDate = () => {
-// //     const today = new Date();
-// //     const monthIndex = today.getMonth(); // 0부터 시작 (0=1월, 6=7월)
-// //     calendarSwiper.slideTo(monthIndex, 0); // 0ms로 바로 이동
-// // }
-
-// const pageOnload = () => {
-//     setDateInSwiper();
-//     // setDate();
-// }
-
-// pageOnload();
 
 
 let calendarSwiper;
-
+const data = [
+  { title1: "내 삶에가까운", title2: "관악구민도서관", img: '../assets/images/banner/MainVisual_1.png' },
+  { title1: "가까운 도서관에서 지금 바로 참여하세요!", title2: "도전! 100권 챌린지", img: '../assets/images/banner/MainVisual_2.png' },
+  { title1: "내 덥지만, 마음은 시원해지는 책", title2: "여름에 읽기 좋은 도서 BEST", img: '../assets/images/banner/MainVisual_3.png' },
+]
 const setDateInSwiper = () => {
-    const wrapper = document.querySelector('.calendar-swiper .swiper-wrapper');
-    let html = '';
-    for (let i = 0; i < 12; i++) {
-        html += `<div class="swiper-slide">${String(i + 1).padStart(2, '0')}월</div>`;
-    }
-    wrapper.innerHTML = html;
+  const wrapper = document.querySelector('.calendar-swiper .swiper-wrapper');
+  let html = '';
+  for (let i = 0; i < 12; i++) {
+    html += `<div class="swiper-slide">${String(i + 1).padStart(2, '0')}월</div>`;
+  }
+  wrapper.innerHTML = html;
 };
 
 const renderDatesForMonth = (month) => {
-    const now = new Date();
-    const year = now.getFullYear();
-    const todayMonth = now.getMonth() + 1; // 현재 월 (1~12)
-    const todayDate = now.getDate();       // 오늘 날짜 (1~31)
+  const now = new Date();
+  const year = now.getFullYear();
+  const todayMonth = now.getMonth() + 1; // 현재 월 (1~12)
+  const todayDate = now.getDate();       // 오늘 날짜 (1~31)
 
-    const days = new Date(year, month, 0).getDate(); // 해당 월의 마지막 일자
+  const days = new Date(year, month, 0).getDate(); // 해당 월의 마지막 일자
 
-    let html = '';
-    for (let i = 1; i <= days; i++) {
-        const isCurrentMonth = (month === todayMonth);
-        const isToday = isCurrentMonth && (i === todayDate);
+  let html = '';
+  for (let i = 1; i <= days; i++) {
+    const isCurrentMonth = (month === todayMonth);
+    const isToday = isCurrentMonth && (i === todayDate);
 
-        html += `<li class="date-item${isToday ? ' on' : ''}">${String(i).padStart(2, '0')}</li>`;
-    }
+    html += `<li class="date-item${isToday ? ' on' : ''}">${String(i).padStart(2, '0')}</li>`;
+  }
 
-    document.querySelector('.days').innerHTML = html;
+  document.querySelector('.days').innerHTML = html;
 };
 
+const setBanner = () => {
+  let html = '';
+  data.map((item, idx) => {
+    if (idx === 1) {
+      html += `<div class="swiper-slide">
+                <article>
+                  <h2 class="title1">${item.title1}</h2>
+                  <h3 class="title2">${item.title2}<div></div></h3>
+                  <div class="input-box">
+                    <input
+                        type="text"
+                        placeholder="원하시는 검색어를 입력하세요."
+                    />
+                    <button>
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <div class="custom_icon">
+                    <div class="box">
+                      <div class="big"></div>
+                      <div class="small"></div>
+                    </div>
+                  </div>
+                </article>
+                <img src=${item.img} alt="" />
+              </div>`
+
+    } else {
+
+
+      html += `<div class="swiper-slide">
+                <article>
+                  <h2 class="title1">${item.title1}</h2>
+                  <h3 class="title2">${item.title2}</h3>
+                  <div class="input-box">
+                    <input
+                        type="text"
+                        placeholder="원하시는 검색어를 입력하세요."
+                    />
+                    <button>
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <div class="custom_icon">
+                    <div class="box">
+                      <div class="big"></div>
+                      <div class="small"></div>
+                    </div>
+                  </div>
+                </article>
+                <img src=${item.img} alt="" />
+              </div>`
+    }
+  })
+  const target = document.querySelector('.banner .inner .swiper .swiper-wrapper')
+  target.innerHTML = html;
+
+}
+
+
+
 const pageOnload = () => {
-    setDateInSwiper();
+  setBanner();
+  setDateInSwiper();
+  calendarSwiper = new Swiper('.calendar-swiper', {
+    loop: false,
+    navigation: {
+      nextEl: '.calendar-button-next',
+      prevEl: '.calendar-button-prev',
+    },
+    on: {
+      init: function () {
+        const initialMonth = this.activeIndex + 1; // 인덱스는 0부터 시작하므로 +1
+        renderDatesForMonth(initialMonth);
+      },
+      slideChange: function () {
+        const currentMonth = this.activeIndex + 1;
+        renderDatesForMonth(currentMonth);
+      }
+    }
+  });
 
-    calendarSwiper = new Swiper('.calendar-swiper', {
-        loop: false,
-        navigation: {
-            nextEl: '.calendar-button-next',
-            prevEl: '.calendar-button-prev',
-        },
-        on: {
-            init: function () {
-                const initialMonth = this.activeIndex + 1; // 인덱스는 0부터 시작하므로 +1
-                renderDatesForMonth(initialMonth);
-            },
-            slideChange: function () {
-                const currentMonth = this.activeIndex + 1;
-                renderDatesForMonth(currentMonth);
-            }
-        }
-    });
-
-    // 오늘 월로 이동
-    const todayMonthIndex = new Date().getMonth(); // 0~11
-    calendarSwiper.slideTo(todayMonthIndex, 0);
+  // 오늘 월로 이동
+  const todayMonthIndex = new Date().getMonth(); // 0~11
+  calendarSwiper.slideTo(todayMonthIndex, 0);
 };
 
 pageOnload();

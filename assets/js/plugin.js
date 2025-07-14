@@ -21,7 +21,7 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 var posterSwiper = new Swiper(".poster-swiper", {
-    slidesPerView: "auto", // 중요: 개별 슬라이드 너비 기준
+    slidesPerView: "auto",
     centeredSlides: true,
     loop: true,
     spaceBetween: 66, // 슬라이드 간 간격
