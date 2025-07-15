@@ -1,165 +1,166 @@
 import { books } from '../module/bookThemeList.js';
 import { posters } from '../module/posterList.js'
+import { noticeList } from '../module/noticeList.js'
 const get = (target) => document.querySelector(target);
 const getAll = (target) => document.querySelectorAll(target);
 
 
 const depth2Display = () => {
-    const liList = getAll('.depth1 > li');
-    liList.forEach((item) => {
-        item.addEventListener('mouseenter', (e) => {
-            const target = item.querySelector('.depth2');
-            target.classList.add('on');
-        })
+  const liList = getAll('.depth1 > li');
+  liList.forEach((item) => {
+    item.addEventListener('mouseenter', (e) => {
+      const target = item.querySelector('.depth2');
+      target.classList.add('on');
     })
+  })
 }
 const depth2NoneDisplay = () => {
-    const liList = getAll('.depth1 > li');
-    liList.forEach((item) => {
-        item.addEventListener('mouseleave', (e) => {
-            const target = item.querySelector('.depth2');
-            target.classList.remove('on');
-        })
+  const liList = getAll('.depth1 > li');
+  liList.forEach((item) => {
+    item.addEventListener('mouseleave', (e) => {
+      const target = item.querySelector('.depth2');
+      target.classList.remove('on');
     })
+  })
 }
 
 const bannerControl = () => {
-    const banner = get('.banner');
+  const banner = get('.banner');
 
-    banner.addEventListener('mouseenter', () => {
-        swiper.autoplay.stop();
-    })
+  banner.addEventListener('mouseenter', () => {
+    swiper.autoplay.stop();
+  })
 
-    banner.addEventListener('mouseleave', () => {
-        swiper.autoplay.start();
-    })
+  banner.addEventListener('mouseleave', () => {
+    swiper.autoplay.start();
+  })
 }
 
 const fnClickBtn = () => {
-    const btn = get('.banner article button');
-    const target = get('.banner article input');
-    btn.addEventListener('click', () => {
-        alert('미안합니다 기능이 정의되지 않았습니다.')
-        target.value = "";
-    })
+  const btn = get('.banner article button');
+  const target = get('.banner article input');
+  btn.addEventListener('click', () => {
+    alert('미안합니다 기능이 정의되지 않았습니다.')
+    target.value = "";
+  })
 }
 
 const menuTapHoverEventHandler = () => {
-    const aList = getAll('.menu_tap ul li a');
-    const spanList = getAll('.menu_tap ul li span');
-    aList.forEach((item, idx) => {
-        item.addEventListener('mouseenter', () => {
-            const target = spanList[idx];
-            target.style.fontWeight = 'bold';
-        })
+  const aList = getAll('.menu_tap ul li a');
+  const spanList = getAll('.menu_tap ul li span');
+  aList.forEach((item, idx) => {
+    item.addEventListener('mouseenter', () => {
+      const target = spanList[idx];
+      target.style.fontWeight = 'bold';
+    })
 
-        item.addEventListener('mouseleave', () => {
-            const target = spanList[idx];
-            target.style.fontWeight = 'normal';
-        })
-    });
+    item.addEventListener('mouseleave', () => {
+      const target = spanList[idx];
+      target.style.fontWeight = 'normal';
+    })
+  });
 }
 
 
 
 const section3ListClickEventHandler = () => {
-    const lis = getAll('#section3 .inner .con-box .bottom .left li')
-    const bookmarks = getAll('#section3 .inner .con-box .bottom .right .bookmarks .bookmark')
-    const img = get('#section3 .inner .con-box .bottom .right img')
-    const imgArr = [
-        "./assets/images/main_3/U-library1.png",
-        "./assets/images/main_3/U-library2.png",
-        "./assets/images/main_3/U-library3.png",
-        "./assets/images/main_3/U-library4.png",
-    ]
-    //left list 클릭시
-    lis.forEach((item, idx) => {
-        const target = item.querySelector('a');
-        target.addEventListener('click', (e) => {
-            e.preventDefault();
-            lis.forEach((item1) => {
-                item1.classList.remove('on');
-            })
-            bookmarks.forEach((item1) => {
-                item1.classList.remove('on');
-            })
-            item.classList.add('on');
-            bookmarks[idx].classList.add('on');
-            img.setAttribute('src', imgArr[idx]);
-        })
+  const lis = getAll('#section3 .inner .con-box .bottom .left li')
+  const bookmarks = getAll('#section3 .inner .con-box .bottom .right .bookmarks .bookmark')
+  const img = get('#section3 .inner .con-box .bottom .right img')
+  const imgArr = [
+    "./assets/images/main_3/U-library1.png",
+    "./assets/images/main_3/U-library2.png",
+    "./assets/images/main_3/U-library3.png",
+    "./assets/images/main_3/U-library4.png",
+  ]
+  //left list 클릭시
+  lis.forEach((item, idx) => {
+    const target = item.querySelector('a');
+    target.addEventListener('click', (e) => {
+      e.preventDefault();
+      lis.forEach((item1) => {
+        item1.classList.remove('on');
+      })
+      bookmarks.forEach((item1) => {
+        item1.classList.remove('on');
+      })
+      item.classList.add('on');
+      bookmarks[idx].classList.add('on');
+      img.setAttribute('src', imgArr[idx]);
     })
+  })
 
-    //right list 클릭시
-    bookmarks.forEach((item, idx) => {
-        const target = item.querySelector('a');
-        target.addEventListener('click', (e) => {
-            e.preventDefault();
-            lis.forEach((item1) => {
-                item1.classList.remove('on');
-            })
-            bookmarks.forEach((item1) => {
-                item1.classList.remove('on');
-            })
-            item.classList.add('on');
-            lis[idx].classList.add('on');
-            img.setAttribute('src', imgArr[idx]);
-        })
+  //right list 클릭시
+  bookmarks.forEach((item, idx) => {
+    const target = item.querySelector('a');
+    target.addEventListener('click', (e) => {
+      e.preventDefault();
+      lis.forEach((item1) => {
+        item1.classList.remove('on');
+      })
+      bookmarks.forEach((item1) => {
+        item1.classList.remove('on');
+      })
+      item.classList.add('on');
+      lis[idx].classList.add('on');
+      img.setAttribute('src', imgArr[idx]);
     })
+  })
 }
 
 const section4TapMenuClickEventHandler = () => {
-    const lis = getAll('#section4 .inner .tap-menu li')
-    lis.forEach((item, idx) => {
-        item.addEventListener('click', (e) => {
-            e.preventDefault();
-            lis.forEach(item1 => {
-                item1.classList.remove('on');
-            })
-            item.classList.add('on');
-            section4BookThemeListChange(idx);
-        })
+  const lis = getAll('#section4 .inner .tap-menu li')
+  lis.forEach((item, idx) => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      lis.forEach(item1 => {
+        item1.classList.remove('on');
+      })
+      item.classList.add('on');
+      section4BookThemeListChange(idx);
     })
+  })
 }
 
 const section4BookThemeListChange = (idx) => {
-    const target = get('.book-theme-list');
-    target.innerHTML = '';
-    let html = '';
-    books[idx].map(item =>
-        html += ` <li class="books">
+  const target = get('.book-theme-list');
+  target.innerHTML = '';
+  let html = '';
+  books[idx].map(item =>
+    html += ` <li class="books">
                 <img src=${item.offimg} alt="" />
                 <span class="genre">${item.genre}</span>
                 <strong class="title">${item.title}</strong>
                 <p class="writer">${item.writer}</p>
               </li>`
-    );
-    target.innerHTML = html;
+  );
+  target.innerHTML = html;
 }
 
 const section4LiMouseEventHandler = () => {
-    const lis = getAll('#section4 .inner .bottom ul li')
-    let imgOnTemplate = `assets/images/main_4/Object_1_on{idx}.png`;
-    let imgOffTemplate = `assets/images/main_4/Object_1_off{idx}.png`;
-    lis.forEach((item, idx) => {
-        item.addEventListener('mouseenter', () => {
-            const target = item.querySelector('img');
+  const lis = getAll('#section4 .inner .bottom ul li')
+  let imgOnTemplate = `assets/images/main_4/Object_1_on{idx}.png`;
+  let imgOffTemplate = `assets/images/main_4/Object_1_off{idx}.png`;
+  lis.forEach((item, idx) => {
+    item.addEventListener('mouseenter', () => {
+      const target = item.querySelector('img');
 
-            const imgOn = imgOnTemplate.replace('{idx}', idx + 1);
-            target.setAttribute('src', imgOn);
-        });
-        item.addEventListener('mouseleave', () => {
-            const target = item.querySelector('img');
-            const imgOff = imgOffTemplate.replace('{idx}', idx + 1);
-            target.setAttribute('src', imgOff);
-        });
-    })
+      const imgOn = imgOnTemplate.replace('{idx}', idx + 1);
+      target.setAttribute('src', imgOn);
+    });
+    item.addEventListener('mouseleave', () => {
+      const target = item.querySelector('img');
+      const imgOff = imgOffTemplate.replace('{idx}', idx + 1);
+      target.setAttribute('src', imgOff);
+    });
+  })
 }
 const setPosters = () => {
-    const target = document.querySelector('#section5 .inner .bottom .poster-swiper .swiper-wrapper');
-    target.innerHTML = '';
-    let html = '';
-    posters.map(({ title, area, place, date, img }) =>
-        html += `
+  const target = document.querySelector('#section5 .inner .bottom .poster-swiper .swiper-wrapper');
+  target.innerHTML = '';
+  let html = '';
+  posters.map(({ title, area, place, date, img }) =>
+    html += `
       <div class="swiper-slide">
                     <img src=${img} alt="" />
                     <strong class="slide-title">${title}</strong>
@@ -230,39 +231,128 @@ const setPosters = () => {
                      
                     </div>
                   </div>`
-    );
-    target.innerHTML = html;
+  );
+  target.innerHTML = html;
 
 }
 const section5PostMouseEventHandler = () => {
-    const slides = getAll('#section5 .bottom .poster-swiper .swiper-slide');
-    slides.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            posterSwiper.autoplay.stop(); // ✅ autoplay 정지
-            item.classList.add('on');
-        });
+  const slides = getAll('#section5 .bottom .poster-swiper .swiper-slide');
+  slides.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      posterSwiper.autoplay.stop(); // ✅ autoplay 정지
+      item.classList.add('on');
+    });
 
-        item.addEventListener('mouseleave', () => {
-            posterSwiper.autoplay.start(); // ✅ autoplay 다시 시작
-            item.classList.remove('on');
-        });
-    })
+    item.addEventListener('mouseleave', () => {
+      posterSwiper.autoplay.start(); // ✅ autoplay 다시 시작
+      item.classList.remove('on');
+    });
+  })
 
 }
 
+const section6NoticeSwiperSet = () => {
+  const target = get('#section6 .bottom .notice-swiper .swiper-wrapper');
+  target.innerHTML = '';
+  let html = '';
+  noticeList.map(({ label, title, date }) => html += `<div class="swiper-slide">
+                  <div class="label">${label}</div>
+                  <article>
+                    <h2 class="title">
+                      ${title}
+                    </h2>
+                    <span class="date">${date}</span>
+                  </article>
+                  <div class="logo">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="54"
+                      height="53"
+                      viewBox="0 0 54 53"
+                      fill="none"
+                    >
+                      <path
+                        d="M36.3291 1V14.6777C45.6867 15.6756 53 23.2654 53 33.2734C52.9999 43.6167 44.62 51.9997 34.292 52C25.0063 52 17.3167 45.2361 15.8477 36.3633H1V9.08105H5.08105V32.2803H15.6025C16.086 23.0855 23.2005 15.6734 32.2412 14.6865V5.08398H1.25977V1H36.3291ZM32.2412 18.8037C25.4623 19.754 20.1612 25.357 19.6924 32.2803H36.0361V36.3633H20.0068C21.4267 42.9557 27.2851 47.916 34.2852 47.916C42.3286 47.9159 48.905 41.011 48.9053 33.2803C48.9053 25.9094 43.4188 19.8015 36.3223 18.8047V28.2891H32.2412V18.8037Z"
+                        fill="#F6F7F8"
+                        stroke="#F6F7F8"
+                        stroke-width="2"
+                      />
+                    </svg>
+                  </div>
+                </div>`)
+  target.innerHTML = html;
+};
 
+const footerSelectEventHandler = () => {
+  const clickTarget = get('#footer .library-toggle');
+  const toggleTarget = get('#footer .library-wrap');
+  const inner = get('#footer .inner');
+  clickTarget.addEventListener('click', () => {
+    toggleTarget.classList.toggle('active');
+    if (!toggleTarget.classList.contains('active')) {
+      inner.style.overflow = 'hidden';
+    } else {
+      inner.style.overflow = 'visible';
+    }
+  })
+}
 
+const footerLibraryLitagsEventHandler = () => {
+  const toggleTarget = get('#footer .library-wrap');
+  const inner = get('#footer .inner');
+
+  const lis = getAll('#footer .inner .top .library-dropdown ul li');
+  const phoneNumberArea = get('#footer .inner .bottom .phone h3');
+  const libraryName = get('#footer .inner .top .library-name');
+  lis.forEach(item => {
+    item.addEventListener('click', () => {
+      const txt = item.innerHTML;
+      libraryName.innerHTML = txt;
+      toggleTarget.classList.remove('active');
+      inner.style.overflow = 'hidden';
+      phoneNumberArea.innerHTML = switchLibraryPhoneNumber(txt);
+    })
+  });
+}
+
+const switchLibraryPhoneNumber = (txt) => {
+  switch (txt) {
+    case '관악중앙도서관':
+      return '02-828-5700'
+    case '하나곡작은도서관':
+      return '02-868-8994'
+    case '은천동작은도서관':
+      return '02-877-1162'
+    case '글빛정보도서관':
+      return '02-878-7460'
+    case '용꿈꾸는작은도서관':
+      return '02-889-8823'
+    case '성현동작은도서관':
+      return '02-877-7182'
+    case '관악구청 교육지원과':
+      return '02-879-5712'
+    case '낙성대공원도서관':
+      return '02-872-5575'
+    case '조원도서관':
+      return '02-851-5571'
+    case '새마을문고관악구지부':
+      return '02-882-5169'
+  }
+}
 const init = () => {
-    setPosters();
-    depth2Display();
-    depth2NoneDisplay();
-    bannerControl();
-    fnClickBtn();
-    menuTapHoverEventHandler();
-    section3ListClickEventHandler();
-    section4TapMenuClickEventHandler();
-    section4LiMouseEventHandler();
-    section5PostMouseEventHandler();
+  setPosters();
+  section6NoticeSwiperSet();
+  depth2Display();
+  depth2NoneDisplay();
+  bannerControl();
+  fnClickBtn();
+  menuTapHoverEventHandler();
+  section3ListClickEventHandler();
+  section4TapMenuClickEventHandler();
+  section4LiMouseEventHandler();
+  section5PostMouseEventHandler();
+  footerSelectEventHandler();
+  footerLibraryLitagsEventHandler();
 }
 
 init();
