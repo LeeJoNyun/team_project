@@ -966,7 +966,7 @@
 
 #section6 {
   width: 100%;
-  height: 487px;
+  height: 587px;
   background-image: url("../images/main_6/BG_6.png");
   background-repeat: no-repeat;
   background-size: 100% 487px;
@@ -975,6 +975,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  padding-top: 100px;
 }
 #section6 .inner .top {
   width: 1410px;
@@ -1001,6 +1002,7 @@
   box-sizing: border-box;
 }
 #section6 .inner .bottom .notice-swiper .swiper-slide {
+  background-color: #fff;
   width: 450px;
   height: 196px;
   border: 1px solid #000;
@@ -1043,11 +1045,22 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  left: -20px;
+  left: -14px;
   top: 27px;
   color: #fff;
   font-weight: 600;
   font-size: 16px;
+}
+#section6 .inner .bottom .notice-swiper .swiper-slide .label::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 0px;
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-right: 12px solid #2e2e2e;
+  /* 삼각형 색상 */
 }
 #section6 .inner .bottom .notice-swiper .swiper-slide:hover .label {
   background: #0b6cc8;
