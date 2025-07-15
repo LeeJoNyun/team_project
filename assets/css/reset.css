@@ -132,6 +132,9 @@ body {
   /* font-family: "Montserrat", sans-serif; */
   font-family: "Paperlogy", sans-serif;
 }
+button {
+  font-family: "Paperlogy", sans-serif;
+}
 h2,
 h3 {
   line-height: 1.3;

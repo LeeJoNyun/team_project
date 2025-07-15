@@ -135,16 +135,18 @@ const section4BookThemeListChange = (idx) => {
               </li>`
   );
   target.innerHTML = html;
+  section4LiMouseEventHandler();
 }
 
 const section4LiMouseEventHandler = () => {
-  const lis = getAll('#section4 .inner .bottom ul li')
+  let lis = getAll('#section4 .inner .bottom .book-theme-list .books')
   lis.forEach((item, idx) => {
 
     item.addEventListener('mouseenter', () => {
       const target = item.querySelector('img');
       const img = target.getAttribute('src');
       const imgOn = img.replace('off', 'on')
+      console.log(imgOn)
       target.setAttribute('src', imgOn)
 
 
@@ -153,7 +155,7 @@ const section4LiMouseEventHandler = () => {
       const target = item.querySelector('img');
       const img = target.getAttribute('src');
       const imgOff = img.replace('on', 'off')
-
+      console.log(imgOff)
       target.setAttribute('src', imgOff)
     });
   })
@@ -236,8 +238,8 @@ const setPosters = () => {
                   </div>`
   );
   target.innerHTML = html;
-
 }
+
 const section5PostMouseEventHandler = () => {
   const slides = getAll('#section5 .bottom .poster-swiper .swiper-slide');
   slides.forEach(item => {
