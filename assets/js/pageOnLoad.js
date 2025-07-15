@@ -2,9 +2,9 @@
 
 let calendarSwiper;
 const data = [
-  { title1: "내 삶에가까운", title2: "관악구민도서관", img: '../assets/images/banner/MainVisual_1.png' },
-  { title1: "가까운 도서관에서 지금 바로 참여하세요!", title2: "도전! 100권 챌린지", img: '../assets/images/banner/MainVisual_2.png' },
-  { title1: "내 덥지만, 마음은 시원해지는 책", title2: "여름에 읽기 좋은 도서 BEST", img: '../assets/images/banner/MainVisual_3.png' },
+  { title1: "내 삶에가까운", title2: "관악구민도서관", img: 'assets/images/banner/MainVisual_1.png' },
+  { title1: "가까운 도서관에서 지금 바로 참여하세요!", title2: "도전! 100권 챌린지", img: 'assets/images/banner/MainVisual_2.png' },
+  { title1: "내 덥지만, 마음은 시원해지는 책", title2: "여름에 읽기 좋은 도서 BEST", img: 'assets/images/banner/MainVisual_3.png' },
 ]
 const setDateInSwiper = () => {
   const wrapper = document.querySelector('.calendar-swiper .swiper-wrapper');
