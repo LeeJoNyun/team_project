@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #wrap,
 #header {
   width: 100%;
@@ -759,15 +760,14 @@
 }
 
 #section5 {
-  background-image: url(../images/main_5/BG_5.png);
-  background-repeat: no-repeat;
-  background-size: contain;
   width: 100%;
   height: 1066px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
+  background-image: url("../images/main_5/BG_5.png");
+  background-repeat: no-repeat;
+  background-size: 100% 1066px; /* 💡 너비는 꽉, 높이는 자동 */
 }
 #section5 .inner {
   height: 743px;
@@ -959,10 +959,30 @@
 }
 
 #section6 {
-  background-image: url("../images/main_6/BG_6.png");
   width: 100%;
-  height: 587px;
-  background-size: cover;
+  height: 487px;
+  background-image: url("../images/main_6/BG_6.png");
   background-repeat: no-repeat;
-  background-position: 0 0;
+  background-size: 100% 487px;
+}
+#section6 .inner {
+  height: 291px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#section6 .inner .top {
+  width: 1410px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#section6 .inner .top .title {
+  font-size: 38px;
+  font-weight: 600;
+}
+#section6 .inner .top p {
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
 }
