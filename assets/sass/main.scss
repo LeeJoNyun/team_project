@@ -3,7 +3,12 @@
   width: 100%;
   min-width: 1600px;
 }
-
+.top-btn {
+  width: 54px;
+  height: 54px;
+  border: 1px solid #000;
+  border-radius: 100%;
+}
 .inner {
   width: 1600px;
   margin: auto;
@@ -1023,7 +1028,7 @@
   height: 587px;
   background-image: url("../images/main_6/BG_6.png");
   background-repeat: no-repeat;
-  background-size: 100% 487px;
+  background-size: 100% 587px;
   .inner {
     display: flex;
     justify-content: center;
@@ -1075,9 +1080,7 @@
               font-size: 26px;
               font-weight: 600;
               margin-bottom: 10px;
-              display: -webkit-box;
-              -webkit-line-clamp: 2; // ⭐ 최대 2줄까지 표시
-              -webkit-box-orient: vertical;
+              white-space: nowrap;
               overflow: hidden;
               text-overflow: ellipsis;
             }
