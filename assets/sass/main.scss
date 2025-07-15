@@ -62,7 +62,7 @@
               width: 117px;
               height: 25.59px;
               position: relative;
-              font-weight: 600;
+              font-weight: 500;
               svg {
                 position: absolute;
                 right: -3px;
@@ -212,7 +212,7 @@
             font-style: normal;
             font-weight: 600;
             line-height: normal;
-            color: #000;
+            color: #fff;
             position: relative;
             z-index: 2;
           }
@@ -250,8 +250,9 @@
             font-style: normal;
             font-weight: 700;
             line-height: normal;
-            color: #000;
+            color: #fff;
             margin-bottom: 50px;
+            margin-top: 10px;
             div {
               width: 50px;
               height: 50px;
@@ -294,7 +295,17 @@
             }
           }
         }
+        &:nth-child(1) {
+          .title1,
+          .title2 {
+            color: #000;
+          }
+        }
       }
+    }
+    .swiper-pagination {
+      position: absolute;
+      right: 37px;
     }
     .swiper-pagination-bullet-active {
       transform: scale(1.3);
@@ -795,6 +806,8 @@
             transform: scale(1.07);
             .genre {
               color: var(--Blue-blue-500, #3879e1);
+              border: 1px solid var(--Blue-blue-500, #3879e1);
+              background: var(--W, #fff);
             }
             .title {
               font-weight: 600;

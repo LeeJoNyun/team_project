@@ -139,19 +139,22 @@ const section4BookThemeListChange = (idx) => {
 
 const section4LiMouseEventHandler = () => {
   const lis = getAll('#section4 .inner .bottom ul li')
-  let imgOnTemplate = `assets/images/main_4/Object_1_on{idx}.png`;
-  let imgOffTemplate = `assets/images/main_4/Object_1_off{idx}.png`;
   lis.forEach((item, idx) => {
+
     item.addEventListener('mouseenter', () => {
       const target = item.querySelector('img');
+      const img = target.getAttribute('src');
+      const imgOn = img.replace('off', 'on')
+      target.setAttribute('src', imgOn)
 
-      const imgOn = imgOnTemplate.replace('{idx}', idx + 1);
-      target.setAttribute('src', imgOn);
+
     });
     item.addEventListener('mouseleave', () => {
       const target = item.querySelector('img');
-      const imgOff = imgOffTemplate.replace('{idx}', idx + 1);
-      target.setAttribute('src', imgOff);
+      const img = target.getAttribute('src');
+      const imgOff = img.replace('on', 'off')
+
+      target.setAttribute('src', imgOff)
     });
   })
 }

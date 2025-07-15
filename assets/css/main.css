@@ -66,7 +66,7 @@
   width: 117px;
   height: 25.59px;
   position: relative;
-  font-weight: 600;
+  font-weight: 500;
 }
 #header .inner .first .top-menu li:nth-child(1) a svg {
   position: absolute;
@@ -206,7 +206,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  color: #000;
+  color: #fff;
   position: relative;
   z-index: 2;
 }
@@ -244,8 +244,9 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  color: #000;
+  color: #fff;
   margin-bottom: 50px;
+  margin-top: 10px;
 }
 .banner .inner .swiper-wrapper .swiper-slide article .title2 div {
   width: 50px;
@@ -286,6 +287,14 @@
   font-size: 35px;
   color: #fff;
   font-weight: 400;
+}
+.banner .inner .swiper-wrapper .swiper-slide:nth-child(1) .title1,
+.banner .inner .swiper-wrapper .swiper-slide:nth-child(1) .title2 {
+  color: #000;
+}
+.banner .inner .swiper-pagination {
+  position: absolute;
+  right: 37px;
 }
 .banner .inner .swiper-pagination-bullet-active {
   transform: scale(1.3);
@@ -754,6 +763,8 @@
 }
 #section4 .inner .bottom .book-theme-list .books:hover .genre {
   color: var(--Blue-blue-500, #3879e1);
+  border: 1px solid var(--Blue-blue-500, #3879e1);
+  background: var(--W, #fff);
 }
 #section4 .inner .bottom .book-theme-list .books:hover .title {
   font-weight: 600;
