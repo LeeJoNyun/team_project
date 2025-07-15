@@ -206,7 +206,6 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  color: #fff;
   position: relative;
   z-index: 2;
 }
@@ -244,7 +243,6 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  color: #fff;
   margin-bottom: 50px;
   margin-top: 10px;
 }
@@ -287,10 +285,6 @@
   font-size: 35px;
   color: #fff;
   font-weight: 400;
-}
-.banner .inner .swiper-wrapper .swiper-slide:nth-child(1) .title1,
-.banner .inner .swiper-wrapper .swiper-slide:nth-child(1) .title2 {
-  color: #000;
 }
 .banner .inner .swiper-pagination {
   position: absolute;

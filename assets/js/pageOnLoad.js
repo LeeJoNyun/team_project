@@ -2,9 +2,9 @@
 
 let calendarSwiper;
 const data = [
-  { title1: "내 삶에가까운", title2: "관악구민도서관", img: './assets/images/banner/MainVisual_1.png' },
-  { title1: "가까운 도서관에서 지금 바로 참여하세요!", title2: "도전! 100권 챌린지", img: './assets/images/banner/MainVisual_2.png' },
-  { title1: "내 덥지만, 마음은 시원해지는 책", title2: "여름에 읽기 좋은 도서 BEST", img: './assets/images/banner/MainVisual_3.png' },
+  { title1: "내 삶에가까운", title2: "관악구민도서관", img: './assets/images/banner/MainVisual_1.png', color: 'black' },
+  { title1: "가까운 도서관에서 지금 바로 참여하세요!", title2: "도전! 100권 챌린지", img: './assets/images/banner/MainVisual_2.png', color: 'white' },
+  { title1: "내 덥지만, 마음은 시원해지는 책", title2: "여름에 읽기 좋은 도서 BEST", img: './assets/images/banner/MainVisual_3.png', color: 'white' },
 ]
 const setDateInSwiper = () => {
   const wrapper = document.querySelector('.calendar-swiper .swiper-wrapper');
@@ -36,57 +36,79 @@ const renderDatesForMonth = (month) => {
 
 const setBanner = () => {
   let html = '';
-  data.map((item, idx) => {
-    if (idx === 1) {
-      html += `<div class="swiper-slide">
-                <article>
-                  <h2 class="title1">${item.title1}</h2>
-                  <h3 class="title2">${item.title2}<div></div></h3>
-                  <div class="input-box">
-                    <input
-                        type="text"
-                        placeholder="원하시는 검색어를 입력하세요."
-                    />
-                    <button>
-                      <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                  <div class="custom_icon">
-                    <div class="box">
-                      <div class="big"></div>
-                      <div class="small"></div>
-                    </div>
-                  </div>
-                </article>
-                <img src=${item.img} alt="" />
-              </div>`
+  data.map((item) => {
+    html += `<div class="swiper-slide">
+    <article>
+      <h2 class="title1" style="color:${item.color}">${item.title1}</h2>
+      <h3 class="title2" style="color:${item.color}">${item.title2}<div></div></h3>
+      <div class="input-box">
+        <input
+            type="text"
+            placeholder="원하시는 검색어를 입력하세요."
+        />
+        <button>
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="custom_icon">
+        <div class="box">
+          <div class="big"></div>
+          <div class="small"></div>
+        </div>
+      </div>
+    </article>
+    <img src=${item.img} alt="" />
+  </div>`
+    // if (idx === 1) {
+    //   html += `<div class="swiper-slide">
+    //             <article>
+    //               <h2 class="title">${item.title1}</h2>
+    //               <h3 class="title">${item.title2}<div></div></h3>
+    //               <div class="input-box">
+    //                 <input
+    //                     type="text"
+    //                     placeholder="원하시는 검색어를 입력하세요."
+    //                 />
+    //                 <button>
+    //                   <i class="fa fa-search" aria-hidden="true"></i>
+    //                 </button>
+    //               </div>
+    //               <div class="custom_icon">
+    //                 <div class="box">
+    //                   <div class="big"></div>
+    //                   <div class="small"></div>
+    //                 </div>
+    //               </div>
+    //             </article>
+    //             <img src=${item.img} alt="" />
+    //           </div>`
 
-    } else {
+    // } else {
 
 
-      html += `<div class="swiper-slide">
-                <article>
-                  <h2 class="title1">${item.title1}</h2>
-                  <h3 class="title2">${item.title2}</h3>
-                  <div class="input-box">
-                    <input
-                        type="text"
-                        placeholder="원하시는 검색어를 입력하세요."
-                    />
-                    <button>
-                      <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                  <div class="custom_icon">
-                    <div class="box">
-                      <div class="big"></div>
-                      <div class="small"></div>
-                    </div>
-                  </div>
-                </article>
-                <img src=${item.img} alt="" />
-              </div>`
-    }
+    //   html += `<div class="swiper-slide">
+    //             <article>
+    //               <h2 class="title1">${item.title1}</h2>
+    //               <h3 class="title2">${item.title2}</h3>
+    //               <div class="input-box">
+    //                 <input
+    //                     type="text"
+    //                     placeholder="원하시는 검색어를 입력하세요."
+    //                 />
+    //                 <button>
+    //                   <i class="fa fa-search" aria-hidden="true"></i>
+    //                 </button>
+    //               </div>
+    //               <div class="custom_icon">
+    //                 <div class="box">
+    //                   <div class="big"></div>
+    //                   <div class="small"></div>
+    //                 </div>
+    //               </div>
+    //             </article>
+    //             <img src=${item.img} alt="" />
+    //           </div>`
+    // }
   })
   const target = document.querySelector('.banner .inner .swiper .swiper-wrapper')
   target.innerHTML = html;
