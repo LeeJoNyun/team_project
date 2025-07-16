@@ -103,9 +103,9 @@ var noticeSwiper = new Swiper(".notice-swiper", {
         nextEl: '.notice-swiper-next',
         prevEl: '.notice-swiper-prev',
     },
-    // autoplay: {
-    //     delay: 3000, // ✅ 3초마다 슬라이드 전환
-    //     disableOnInteraction: false, // 사용자가 터치하거나 클릭해도 계속 자동 재생
-    // },
+    autoplay: {
+        delay: 3000, // ✅ 3초마다 슬라이드 전환
+        disableOnInteraction: false, // 사용자가 터치하거나 클릭해도 계속 자동 재생
+    },
 
 });

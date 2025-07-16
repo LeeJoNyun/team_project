@@ -84,56 +84,7 @@ const setBanner = () => {
       <img src=${item.img} alt="" />
     </div>`
     }
-    // if (idx === 1) {
-    //   html += `<div class="swiper-slide">
-    //             <article>
-    //               <h2 class="title">${item.title1}</h2>
-    //               <h3 class="title">${item.title2}<div></div></h3>
-    //               <div class="input-box">
-    //                 <input
-    //                     type="text"
-    //                     placeholder="원하시는 검색어를 입력하세요."
-    //                 />
-    //                 <button>
-    //                   <i class="fa fa-search" aria-hidden="true"></i>
-    //                 </button>
-    //               </div>
-    //               <div class="custom_icon">
-    //                 <div class="box">
-    //                   <div class="big"></div>
-    //                   <div class="small"></div>
-    //                 </div>
-    //               </div>
-    //             </article>
-    //             <img src=${item.img} alt="" />
-    //           </div>`
 
-    // } else {
-
-
-    //   html += `<div class="swiper-slide">
-    //             <article>
-    //               <h2 class="title1">${item.title1}</h2>
-    //               <h3 class="title2">${item.title2}</h3>
-    //               <div class="input-box">
-    //                 <input
-    //                     type="text"
-    //                     placeholder="원하시는 검색어를 입력하세요."
-    //                 />
-    //                 <button>
-    //                   <i class="fa fa-search" aria-hidden="true"></i>
-    //                 </button>
-    //               </div>
-    //               <div class="custom_icon">
-    //                 <div class="box">
-    //                   <div class="big"></div>
-    //                   <div class="small"></div>
-    //                 </div>
-    //               </div>
-    //             </article>
-    //             <img src=${item.img} alt="" />
-    //           </div>`
-    // }
   })
   const target = document.querySelector('.banner .inner .swiper .swiper-wrapper')
   target.innerHTML = html;
