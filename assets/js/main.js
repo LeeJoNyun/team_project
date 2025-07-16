@@ -344,6 +344,26 @@ const switchLibraryPhoneNumber = (txt) => {
       return '02-882-5169'
   }
 }
+
+const topBtnHandler = () => {
+  const topBtn = document.querySelector(".top-btn");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 999) {
+      topBtn.style.opacity = "1";
+    } else {
+      topBtn.style.opacity = "0";
+    }
+  });
+
+  topBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth" // 부드럽게 스크롤
+    });
+  });
+
+}
 const init = () => {
   setPosters();
   section6NoticeSwiperSet();
@@ -358,6 +378,7 @@ const init = () => {
   section5PostMouseEventHandler();
   footerSelectEventHandler();
   footerLibraryLitagsEventHandler();
+  topBtnHandler();
 }
 
 init();

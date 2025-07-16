@@ -5,13 +5,6 @@
   min-width: 1600px;
 }
 
-.top-btn {
-  width: 54px;
-  height: 54px;
-  border: 1px solid #000;
-  border-radius: 100%;
-}
-
 .inner {
   width: 1600px;
   margin: auto;
@@ -1293,4 +1286,31 @@
   position: absolute;
   bottom: -47px;
   right: 0;
+}
+
+.top-btn {
+  cursor: pointer;
+  width: 69px;
+  height: 69px;
+  border: 1px solid #000;
+  background-color: #000;
+  border-radius: 100%;
+  position: fixed;
+  z-index: 9999;
+  right: 46px;
+  top: 387px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.5s;
+}
+.top-btn .icon-book {
+  position: relative;
+}
+.top-btn .icon-arrow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
