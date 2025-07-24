@@ -20,20 +20,32 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 
-var posterSwiper = new Swiper(".poster-swiper", {
-    slidesPerView: "auto",
-    centeredSlides: true,
-    loop: true,
-    spaceBetween: 66, // 슬라이드 간 간격
-    grabCursor: true,
-    pagination: {
-        clickable: true,
-    },
-    autoplay: {
-        delay: 3000, // ✅ 3초마다 슬라이드 전환
-        disableOnInteraction: false, // 사용자가 터치하거나 클릭해도 계속 자동 재생
-    },
+// 슬라이드 전체를 좌우로 이동
+const track = document.querySelector(".poster-swiper .swiper-wrapper");
+const slideWidth = track.offsetWidth / 2; // 원본 너비만큼 이동
+const posterAnimate = gsap.to(track, {
+    x: -slideWidth, // 왼쪽으로 이동
+    duration: 10,   // 느리게 흐름
+    ease: "none",
+    repeat: -1,     // 무한 반복
 });
+
+// var posterSwiper = new Swiper(".poster-swiper", {
+//     slidesPerView: "auto",
+//     centeredSlides: true,
+//     loop: true,
+//     spaceBetween: 66, // 슬라이드 간 간격
+//     grabCursor: true,
+//     pagination: {
+//         clickable: true,
+//     },
+//     allowTouchMove: false, // 터치 스와이프 막기
+//     autoplay: {
+//         delay: 0,
+//         disableOnInteraction: false, // 사용자가 터치하거나 클릭해도 계속 자동 재생
+//     },
+//     speed: 4000,
+// });
 
 // ✅ 애니메이션 실행 함수
 function animateSlide(slide) {

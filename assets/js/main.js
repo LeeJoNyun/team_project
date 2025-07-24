@@ -88,6 +88,19 @@ const section3ListClickEventHandler = () => {
       bookmarks[idx].classList.add('on');
       img.setAttribute('src', imgArr[idx]);
     })
+
+    target.addEventListener('mouseenter', (e) => {
+      e.preventDefault();
+      lis.forEach((item1) => {
+        item1.classList.remove('on');
+      })
+      bookmarks.forEach((item1) => {
+        item1.classList.remove('on');
+      })
+      item.classList.add('on');
+      bookmarks[idx].classList.add('on');
+      img.setAttribute('src', imgArr[idx]);
+    })
   })
 
   //right list 클릭시
@@ -244,13 +257,15 @@ const section5PostMouseEventHandler = () => {
   const slides = getAll('#section5 .bottom .poster-swiper .swiper-slide');
   slides.forEach(item => {
     item.addEventListener('mouseenter', () => {
-      posterSwiper.autoplay.stop(); // ✅ autoplay 정지
+      // posterSwiper.autoplay.stop(); // ✅ autoplay 정지
+      posterAnimate.pause();
       item.classList.add('on');
     });
 
     item.addEventListener('mouseleave', () => {
-      posterSwiper.autoplay.start(); // ✅ autoplay 다시 시작
+      // posterSwiper.autoplay.start(); // ✅ autoplay 다시 시작
       item.classList.remove('on');
+      posterAnimate.play();
     });
   })
 
@@ -347,6 +362,7 @@ const switchLibraryPhoneNumber = (txt) => {
 
 const topBtnHandler = () => {
   const topBtn = document.querySelector(".top-btn");
+
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 999) {

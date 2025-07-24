@@ -740,7 +740,7 @@
   font-size: 18px;
   font-weight: 600;
   padding: 2px 24px;
-  margin-bottom: 16px;
+  margin: 16px 0;
 }
 #section4 .inner .bottom .book-theme-list .books .title {
   height: 21px;
@@ -871,7 +871,9 @@
   padding: 40px 0;
 }
 #section5 .inner .bottom .poster-swiper .swiper-wrapper {
+  display: flex;
   align-items: flex-start;
+  gap: 65px;
 }
 #section5 .inner .bottom .poster-swiper .swiper-wrapper .swiper-slide {
   width: 308.359px;
@@ -997,7 +999,7 @@
 }
 #section6 .inner .bottom .notice-swiper {
   width: 1550px;
-  height: 200px;
+  height: 220px;
   margin-top: 50px;
   box-sizing: border-box;
 }
@@ -1292,18 +1294,16 @@
   cursor: pointer;
   width: 69px;
   height: 69px;
-  border: 1px solid #000;
   background-color: #000;
   border-radius: 100%;
   position: fixed;
   z-index: 9999;
   right: 46px;
-  top: 387px;
+  top: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: 0.5s;
 }
 .top-btn .icon-book {
   position: relative;
@@ -1313,4 +1313,10 @@
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
+}
+.top-btn:hover {
+  background-color: #3879e1;
+}
+.top-btn:hover .icon-arrow path {
+  stroke: #3879e1;
 }

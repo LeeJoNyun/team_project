@@ -782,7 +782,7 @@
             font-size: 18px;
             font-weight: 600;
             padding: 2px 24px;
-            margin-bottom: 16px;
+            margin: 16px 0;
           }
           .title {
             height: 21px;
@@ -921,7 +921,9 @@
         height: 100%;
         padding: 40px 0;
         .swiper-wrapper {
+          display: flex;
           align-items: flex-start;
+          gap: 65px;
           .swiper-slide {
             width: 308.359px;
             text-align: center;
@@ -1048,10 +1050,9 @@
       position: relative;
       .notice-swiper {
         width: 1550px;
-        height: 200px;
+        height: 220px;
         margin-top: 50px;
         box-sizing: border-box;
-
         .swiper-slide {
           background-color: #fff;
           width: 450px;
@@ -1377,18 +1378,16 @@
   cursor: pointer;
   width: 69px;
   height: 69px;
-  border: 1px solid #000;
   background-color: #000;
   border-radius: 100%;
   position: fixed;
   z-index: 9999;
   right: 46px;
-  top: 387px;
+  top: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: 0.5s;
   .icon-book {
     position: relative;
   }
@@ -1397,5 +1396,14 @@
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
+  }
+  &:hover {
+    background-color: #3879e1;
+
+    .icon-arrow {
+      path {
+        stroke: #3879e1;
+      }
+    }
   }
 }
